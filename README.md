@@ -7,6 +7,9 @@ time reading about it and experimenting with it, to learn how to
 perform a search with the Google Book API. This was done in
 a separate, console project.
 
+### Architectual changes
+I'm going to create another project to put the Google Book API code into
+
 ## The basic app
 The basic instrunctions were to prepare an app that allowed a user
 to search for books either by author or title. Naturally, other
