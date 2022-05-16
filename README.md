@@ -16,7 +16,16 @@ to search for books either by author or title. Naturally, other
 options could also be done, but for now I'm going to focus upon 
 those two
 
-## Initial approach
+## A Google Book API NuGet Package!
+I discovered that NuGet has an API for Google Books! Its called **Google.Apis.Books.v1**
+and [can be found here](https://www.nuget.org/packages/Google.Apis.Books.v1).
+
+### Follow-up for the NuGet Google.Apis.Books.v1
+After spending a couple of days trying to work with this NuGet package, I've decided
+to adandon it. It doesn't seem to work well. My guess is it was written for older versions
+of the .NET Framework, whereas I'm using .NET 6.
+
+## The approach I'll follow now
 I'll have two pages, one for searching by author, the other 
 for searching by title. I'm chosing this approach because at the 
 moment I'm not sure how to restrict the search by one and not the 
