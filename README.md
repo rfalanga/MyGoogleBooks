@@ -22,5 +22,12 @@ for searching by title. I'm chosing this approach because at the
 moment I'm not sure how to restrict the search by one and not the 
 other, if the user enters both author and title.
 
+## Working on searching by Author
+I've begun the work in a separate feature branch. However, I'm created a PR
+and merged the feature branch back into `main`. Then deleted the feature branch.
+Will need to resume work on this tomorrow.
+
+## Future version
+
 In a later version allowing the user to search both by author
 and title would be useful.
