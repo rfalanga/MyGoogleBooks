@@ -39,4 +39,5 @@ Will need to resume work on this tomorrow.
 ## Future version
 
 In a later version allowing the user to search both by author
-and title would be useful.
+and title would be useful. In order to do this I'll need to get
+[more information from this link](https://developers.google.com/books/docs/v1/using#api_params)
