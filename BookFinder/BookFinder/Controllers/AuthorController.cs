@@ -1,4 +1,5 @@
-﻿using BookFinder.Models;
+﻿using BookApi;
+using BookFinder.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -15,7 +16,15 @@ namespace BookFinder.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            BookApi.BookApi bookApi = new BookApi.BookApi();
+            return View(bookApi);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index([Bind()]BookApi.BookApi bookApi)
+        {
+            return View(bookApi);
         }
 
     }
