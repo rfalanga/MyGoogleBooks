@@ -16,16 +16,17 @@ namespace BookFinder.Controllers
 
         public IActionResult Index()
         {
-            BookApi.BookApi bookApi = new BookApi.BookApi();
-            return View(bookApi);
+            //BookApi.BookApi bookApi = new BookApi.BookApi();
+            //return View(bookApi);
+            return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index([Bind()]BookApi.BookApi bookApi)
-        {
-            return View(bookApi);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Index([Bind()]BookApi.BookApi bookApi)
+        //{
+        //    return View(bookApi);
+        //}
 
     }
 }
