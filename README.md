@@ -36,6 +36,10 @@ I've begun the work in a separate feature branch. However, I'm created a PR
 and merged the feature branch back into `main`. Then deleted the feature branch.
 Will need to resume work on this tomorrow.
 
+### Another change for Author
+I've decided that I will reference the Book API from the MVC Controller,
+rather than the view.
+
 ## Future version
 
 In a later version allowing the user to search both by author
