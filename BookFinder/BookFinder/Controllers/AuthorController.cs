@@ -3,6 +3,7 @@ using BookFinder.Models;
 using BookFinder.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Web;
 
 namespace BookFinder.Controllers
 {
@@ -27,6 +28,8 @@ namespace BookFinder.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index([Bind("AuthorName")] AuthorViewModel authorViewModel)
         {
+            var root = await BookApi.BookApi.GetBooksByAuthor(HttpUtility.HtmlEncode(authorViewModel.AuthorName));
+            authorViewModel.Root = (root == null) ? new BookApi.Models.Root() : root;
             return View(authorViewModel);
         }
 

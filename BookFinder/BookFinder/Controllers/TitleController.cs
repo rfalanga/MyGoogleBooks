@@ -3,6 +3,7 @@ using BookFinder.Models;
 using BookFinder.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Web;
 
 namespace BookFinder.Controllers
 {
@@ -17,14 +18,16 @@ namespace BookFinder.Controllers
 
         public IActionResult Index()
         {
-            TitleController titleController = null;
-            return View(titleController);
+            TitleViewModel viewModel = null;
+            return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index([Bind("Title")] TitleViewModel titleViewModel)
         {
+            var root = await BookApi.BookApi.GetBooksByTitle(HttpUtility.HtmlEncode(titleViewModel.Title));
+            titleViewModel.Root = (root == null) ? new BookApi.Models.Root() : root;
             return View(titleViewModel);
         }
 

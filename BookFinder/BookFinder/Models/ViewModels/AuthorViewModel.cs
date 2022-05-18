@@ -1,4 +1,6 @@
-﻿namespace BookFinder.Models.ViewModels
+﻿using BookApi.Models;
+
+namespace BookFinder.Models.ViewModels
 {
     public class AuthorViewModel
     {
@@ -9,6 +11,9 @@
         public AuthorViewModel()
         {
             AuthorName = "";
+            Root = new Root();  // just in case
         }
+
+        public Root Root { get; set; }
     }
 }
