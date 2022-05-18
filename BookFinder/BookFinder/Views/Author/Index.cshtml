@@ -11,7 +11,9 @@
 </div>
 
 <form asp-controller="Author" asp-action="Index" method="post">
-    <input id="AuthorName" name="AuthorName" type="text" />
+    <div>
+        <input asp-for="AuthorName" type="text" />
+    </div>
     @{
         if (@Model != null && !string.IsNullOrEmpty(@Model?.AuthorName))
         {
