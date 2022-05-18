@@ -1,5 +1,6 @@
 ﻿using BookApi;
 using BookFinder.Models;
+using BookFinder.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -18,15 +19,16 @@ namespace BookFinder.Controllers
         {
             //BookApi.BookApi bookApi = new BookApi.BookApi();
             //return View(bookApi);
-            return View();
+            AuthorViewModel authorViewModel = null; // new AuthorViewModel();
+            return View(authorViewModel);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Index([Bind()]BookApi.BookApi bookApi)
-        //{
-        //    return View(bookApi);
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index([Bind("AuthorName")] AuthorViewModel authorViewModel)
+        {
+            return View(authorViewModel);
+        }
 
     }
 }

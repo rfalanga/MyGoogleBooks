@@ -1,7 +1,14 @@
-﻿@{
+﻿@using BookApi  @*First added a reference to this library project*@
+
+@{
     ViewData["Title"] = "Search by title";
 }
 
 <div class="text-center">
     <h1 class="display-4">Search by book title</h1>
 </div>
+
+
+<form asp-controller="Title" asp-action="Index" method="post">
+    @BookApi.GetBooksByTitle("murder%20on%20the%20orient%20express")
+</form>

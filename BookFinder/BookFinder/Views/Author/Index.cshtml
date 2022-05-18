@@ -1,5 +1,6 @@
 ﻿@using BookApi  @*First added a reference to this library project*@
-
+@using System.Web
+@model BookFinder.Models.ViewModels.AuthorViewModel
 
 @{
     ViewData["Title"] = "Search by author";
@@ -10,5 +11,16 @@
 </div>
 
 <form asp-controller="Author" asp-action="Index" method="post">
-    @BookApi.GetBooksByAuthor("Christie")
+    <input id="AuthorName" name="AuthorName" type="text" />
+    @{
+        if (@Model != null && !string.IsNullOrEmpty(@Model?.AuthorName))
+        {
+            var tmp = await @BookApi.GetBooksByAuthor(HttpUtility.HtmlEncode(@Model.AuthorName));
+        }
+        //int i = 0;
+    }
+
+    <div class="text-center" style="margin-top:10px;">
+        <input type="submit" value="Search for author's books" class="text-primary" />
+    </div>
 </form>
