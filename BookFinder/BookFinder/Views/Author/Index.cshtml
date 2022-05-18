@@ -1,4 +1,5 @@
 ﻿@using BookApi  @*First added a reference to this library project*@
+@using System.Web
 
 
 @{
@@ -10,8 +11,9 @@
 </div>
 
 <form asp-controller="Author" asp-action="Index" method="post">
+    <input id="authorName" name="authorName" type="text" />
     @{
-        var tmp = @BookApi.GetBooksByAuthor("Christie");
-        int i = 0;
+        var tmp = await @BookApi.GetBooksByAuthor(HttpUtility.HtmlEncode(#authorName));
+        //int i = 0;
     }
 </form>
