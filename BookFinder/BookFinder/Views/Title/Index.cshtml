@@ -1,4 +1,6 @@
 ﻿@using BookApi  @*First added a reference to this library project*@
+@using System.Web
+@model BookFinder.Models.ViewModels.TitleViewModel
 
 @{
     ViewData["Title"] = "Search by title";
@@ -10,5 +12,16 @@
 
 
 <form asp-controller="Title" asp-action="Index" method="post">
-    @BookApi.GetBooksByTitle("murder%20on%20the%20orient%20express")
+    <input id="Title" name="Title" type="text" />
+    @{
+        if (@Model != null && !string.IsNullOrEmpty(@Model?.Title))
+        {
+            var tmp = await @BookApi.GetBooksByTitle(HttpUtility.HtmlEncode(@Model.Title));
+        }
+    }
+
+    <div class="text-center" style="margin-top:10px;">
+        <input type="submit" value="Search by book title" class="text-primary" />
+    </div>
+
 </form>
