@@ -17,7 +17,11 @@
     @{
         if (@Model != null && !string.IsNullOrEmpty(@Model?.AuthorName))
         {
-            //var tmp = await @BookApi.GetBooksByAuthor(HttpUtility.HtmlEncode(@Model.AuthorName));
+            // working on the happy path, for now
+            foreach (var item in Model.Root.items)
+            {
+                
+            }
         }
         //int i = 0;
     }
