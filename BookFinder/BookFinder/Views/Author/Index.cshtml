@@ -11,7 +11,7 @@
 </div>
 
 <form asp-controller="Author" asp-action="Index" method="post">
-    <input id="authorName" name="authorName" type="text" />
+    <input id="AuthorName" name="AuthorName" type="text" />
     @{
         if (@Model != null)
         {
@@ -21,6 +21,6 @@
     }
 
     <div class="text-center" style="margin-top:10px;">
-        <input type="button" value="Search for author's books" class="text-primary" />
+        <input type="submit" value="Search for author's books" class="text-primary" />
     </div>
 </form>
