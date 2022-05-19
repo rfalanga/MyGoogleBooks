@@ -21,9 +21,10 @@
             foreach (var item in @Model.Root.items)
             {
                 <fieldset>
-                    <label asp-for="@item.volumeInfo.title"></label>
-                    <input asp-for="@item.volumeInfo.title" type="text" />
+                    <label asp-for="@item.volumeInfo.title"></label>:
+                    @item.volumeInfo.title
                 </fieldset>
+                <br /><br />
             }
         }
     }
