@@ -18,12 +18,13 @@
         if (@Model != null && !string.IsNullOrEmpty(@Model?.AuthorName))
         {
             // working on the happy path, for now
-            foreach (var item in Model.Root.items)
+            foreach (var item in @Model.Root.items)
             {
-                
+                <fieldset>
+                    <label asp-for="@item.volumeInfo.title"></label>
+                </fieldset>
             }
         }
-        //int i = 0;
     }
 
     <div class="text-center" style="margin-top:10px;">
