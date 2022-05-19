@@ -17,9 +17,27 @@
     @{
         if (@Model != null && !string.IsNullOrEmpty(@Model?.AuthorName))
         {
-            //var tmp = await @BookApi.GetBooksByAuthor(HttpUtility.HtmlEncode(@Model.AuthorName));
+            // working on the happy path, for now
+            foreach (var item in @Model.Root.items)
+            {
+                    <fieldset>
+                        <div>
+                            <label asp-for="@item.volumeInfo.title"></label>:&nbsp;
+                            @item.volumeInfo.title
+                        </div>
+                        <div>
+                            <label asp-for="@item.volumeInfo.subtitle"></label>:&nbsp;
+                            @item.volumeInfo.subtitle
+                        </div>
+                        <div>
+                            <label asp-for="@item.volumeInfo.description"></label>:
+                            <br />
+                            @item.volumeInfo.description
+                        </div>
+                    </fieldset>
+                    <br /><br />
+            }
         }
-        //int i = 0;
     }
 
     <div class="text-center" style="margin-top:10px;">

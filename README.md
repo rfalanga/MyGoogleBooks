@@ -40,8 +40,10 @@ Will need to resume work on this tomorrow.
 I've decided that I will reference the Book API from the MVC Controller,
 rather than the view.
 
-## Future version
+## Future versions/Issues
 
-In a later version allowing the user to search both by author
-and title would be useful. In order to do this I'll need to get
-[more information from this link](https://developers.google.com/books/docs/v1/using#api_params)
+- In a later version allowing the user to search both by author and title would be useful. In order to do this I'll need to get [more information from this link](https://developers.google.com/books/docs/v1/using#api_params)
+- This does not display all of the details that could be returned by the Google Book API, however I was concerned that I'd leave it broken, so I decided to stop while it's working
+- There is no unit testing involved, that should be done
+- The auxillary project, BookApi, is not well named. It really is a library function that uses the facade pattern for accessing the Google Book API
+- Although I did get a Google Developer key to access private Google Book collections, I am not familiar with how to store secrets in GitHub. Storing secrets in a public repo is a **bad idea**, so that functionality will have to wait until I learn about GitHub secrets

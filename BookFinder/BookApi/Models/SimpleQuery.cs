@@ -3,6 +3,8 @@
  * when performing a simple query against publically stored books.
  */
 
+using System.ComponentModel.DataAnnotations;
+
 namespace BookApi.Models
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
@@ -220,11 +222,16 @@ namespace BookApi.Models
             authors = new List<string>();
         }
 
+        [Display(Name = "Book title")]
         public string title { get; set; }
+
+        [Display(Name = "Book Sub-title")]
         public string subtitle { get; set; }
         public List<string> authors { get; set; }
         public string publisher { get; set; }
         public string publishedDate { get; set; }
+
+        [Display(Name = "Book Description")]
         public string description { get; set; }
         public List<IndustryIdentifier> industryIdentifiers { get; set; }
         public ReadingModes readingModes { get; set; }
